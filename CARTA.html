@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sobre con Carta para Mamá</title>
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: 'Georgia', serif;
+            text-align: center;
+            background-color: #ffe6e6;
+            padding: 50px;
+        }
+
+        /* Contenedor principal que ajusta automáticamente su tamaño */
+        .contenedor {
+            position: relative;
+            width: 90%;
+            max-width: 400px; /* Limita el ancho para pantallas grandes */
+            height: 250px;
+            margin: auto;
+        }
+
+        /* Diseño del sobre */
+        .sobre {
+            width: 100%;
+            height: 100%;
+            background-color: #ff6699; /* Color rosa vibrante */
+            position: absolute;
+            bottom: 0;
+            border-radius: 15px; /* Bordes redondeados */
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3); /* Sombra para efecto 3D */
+        }
+
+        /* Corazones decorativos */
+        .corazones {
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 60px; /* Tamaño grande para destacar */
+            color: #ff3366; /* Rojo vibrante */
+            opacity: 0; /* Inicialmente invisible */
+            transition: opacity 1s ease-in-out; /* Aparición progresiva */
+        }
+
+        /* Diseño de la carta */
+        .carta {
+            width: 95%;
+            height: 170px;
+            background-color: white;
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100%);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 3px 3px 15px rgba(0, 0, 0, 0.3);
+            opacity: 0; /* Inicialmente invisible */
+            transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+        }
+
+        /* Título de la carta */
+        h1 {
+            color: #ff3366;
+            font-size: 18px;
+        }
+
+        /* Estilos generales del texto */
+        p {
+            font-size: 16px;
+            color: #333;
+        }
+
+        /* Firma con estilo resaltado */
+        .firma {
+            margin-top: 30px;
+            font-weight: bold;
+            color: #ff3366;
+        }
+    </style>
+    <script>
+        /**
+         * Función que activa la animación de la carta al cargar la página
+         */
+        function mostrarCarta() {
+            // Muestra la carta subiendo desde el sobre
+            document.querySelector('.carta').style.transform = "translateX(-50%) translateY(0)";
+            document.querySelector('.carta').style.opacity = "3";
+            
+            // Muestra los corazones decorativos
+            document.querySelector('.corazones').style.opacity = "2";
+        }
+    </script>
+</head>
+<body onload="mostrarCarta()">
+    <!-- Contenedor que incluye el sobre y la carta -->
+    <div class="contenedor">
+        <!-- Corazones decorativos que aparecen con la animación -->
+        <div class="corazones">❤️❤️❤️</div>
+
+        <!-- Representación visual del sobre -->
+        <div class="sobre"></div>
+
+        <!-- Carta con el mensaje especial para mamá -->
+        <div class="carta">
+            <h1>Para la mejor mamá del mundo 💖</h1>
+            <p>
+                Mamá, no hay palabras suficientes para agradecerte todo lo que has hecho por nosotros.
+                Eres la luz que nos ha guiado y la fortaleza que nos ha sostenido.
+            </p>
+            <p>
+                Gracias por cada sacrificio, cada abrazo y cada palabra de aliento. 
+                Eres la verdadera heroína de nuestra historia.
+            </p>
+            <p class="firma">Con amor infinito, tus hijos ❤️</p>
+        </div>
+    </div>
+</body>
+</html>
